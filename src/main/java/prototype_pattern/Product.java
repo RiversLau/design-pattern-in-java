@@ -4,8 +4,18 @@ package prototype_pattern;
  * Author: Rivers
  * Date: 2017/11/18 16:14
  */
-public interface Product extends Cloneable {
+public abstract class Product implements Cloneable {
 
-    void use(String str);
-    Product createClone();
+    public abstract void use(String str);
+
+    public Product createClone() {
+
+        Product p = null;
+        try {
+            p = (Product) clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return p;
+    }
 }

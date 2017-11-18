@@ -4,7 +4,7 @@ package prototype_pattern;
  * Author: Rivers
  * Date: 2017/11/18 16:28
  */
-public class MessageBox implements Product {
+public class MessageBox extends Product {
 
     private char ch;
     public MessageBox(char ach) {
@@ -25,16 +25,5 @@ public class MessageBox implements Product {
             System.out.print(ch);
         }
         System.out.println("");
-    }
-
-    @Override
-    public Product createClone() {
-        Product p = null;
-        try {
-            p = (Product) clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        return p;
     }
 }

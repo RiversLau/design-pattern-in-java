@@ -4,7 +4,7 @@ package prototype_pattern;
  * Author: Rivers
  * Date: 2017/11/18 16:19
  */
-public class UnderlinePen implements Product {
+public class UnderlinePen extends Product {
 
     private char ch;
     public UnderlinePen(char ach) {
@@ -20,16 +20,5 @@ public class UnderlinePen implements Product {
             System.out.print(ch);
         }
         System.out.println();
-    }
-
-    @Override
-    public Product createClone() {
-        Product p = null;
-        try {
-            p = (Product) clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        return p;
     }
 }
