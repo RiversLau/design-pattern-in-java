@@ -1,10 +1,10 @@
-package pattern11_composite;
+package pattern13_visitor;
 
 /**
  * Author: Rivers
- * Date: 2017/11/21 06:06
+ * Date: 2017/11/22 06:29
  */
-public class CompositeTest {
+public class VisitorTest {
     public static void main(String[] args) {
         System.out.println("Making root entries...");
         Directory rootDir = new Directory("root");
@@ -17,7 +17,7 @@ public class CompositeTest {
 
         binDir.add(new File("vi", 10000));
         binDir.add(new File("latex", 20000));
-        rootDir.printList();
+        rootDir.accept(new ListVisitor());
 
         System.out.println("");
         System.out.println("Making usr entries...");
@@ -33,6 +33,6 @@ public class CompositeTest {
         hanako.add(new File("memo.text", 300));
         tomura.add(new File("game.doc", 400));
         tomura.add(new File("junk.mail", 500));
-        rootDir.printList();
+        rootDir.accept(new ListVisitor());
     }
 }
